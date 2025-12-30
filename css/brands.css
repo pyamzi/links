@@ -10,17 +10,17 @@
 /* Only include brand-specific button styling here */
 .button,button {
   color:var(--button-text,#000000);
-  background-color:var(--button-background,transparent);
+  /* background-color:var(--button-background,transparent); */
 	border:var(--button-border,none);
 	transition:filter 0.2s ease,transform 0.2s ease;
 }
 
 /* Global Button Hover Effect
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.button:hover,button:hover {
+/* .button:hover,button:hover {
 	filter:brightness(90%);
 	transform:translateY(-1px);
-}
+} */
 
 /* Button Icons
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -33,10 +33,93 @@
 
 /* Default */
 .button.button-default {
-	--button-text:#ffffff;
-	--button-background:#2457F5;
+	--button-text:#151515;
+	--button-background:#ffffff;
 	--button-border:1px solid #ffffff;
 }
+
+/* Big */
+.button.button-big {
+	--button-text:#151515;
+	--button-background:#ffffff;
+	--button-border:1px solid #ffffff;
+	flex-direction:row;
+	align-items:flex-start;
+	padding:1rem 1.25rem;
+	min-height:5rem;
+}
+
+.button.button-big .icon {
+	width: 60px;
+	height: 60px;
+	font-size: 24px;
+	margin: 0;
+	flex-shrink: 0;
+}
+
+.button.button-big .description {
+	display: block;
+	font-size: 0.75rem;
+	margin-top: 4px;
+	opacity: 0.65;
+	line-height: 1.3;
+	font-weight: 400;
+}
+
+/* Affiliate */
+.button.button-affiliate {
+	--button-text:#151515;
+	--button-background:#ffffff;
+	--button-border:1px solid #ffffff;
+	flex-direction:row;
+	align-items:flex-start;
+	padding:1rem 1.25rem;
+	min-height:5rem;
+}
+
+/* Big with Price */
+.button.button-big-price {
+	--button-text:#151515;
+	--button-background:#ffffff;
+	--button-border:1px solid #ffffff;
+	flex-direction:row;
+	align-items:flex-start;
+	padding:1rem 1.25rem;
+	min-height:5rem;
+}
+
+.button.button-big-price .icon {
+	width: 60px;
+	height: 60px;
+	font-size: 24px;
+	margin: 0;
+	flex-shrink: 0;
+}
+
+.button.button-big-price .title-row {
+	display: flex;
+	justify-content: flex-start;
+	align-items: baseline;
+	gap: 0.5rem;
+}
+
+.button.button-big-price .price {
+	font-size: 0.75rem;
+	font-weight: 600;
+	opacity: 0.65;
+	margin-left: 0rem;
+	white-space: nowrap;
+}
+
+.button.button-big-price .description {
+	display: block;
+	font-size: 0.75rem;
+	margin-top: 4px;
+	opacity: 0.65;
+	line-height: 1.3;
+	font-weight: 400;
+}
+
 
 /* Amazon */
 .button-amazon {
@@ -630,4 +713,11 @@
 	--button-text:#ffffff;
 	--button-background:#0B5CFF;
   --button-border:1px solid #FFFFFF;
+}
+
+/* Anki GameBoy */
+.button-anki-gameboy {
+    --button-text: #191919;
+    --button-background: #ffffff;
+    --button-border: 1px solid #000000;
 }
