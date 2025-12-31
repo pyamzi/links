@@ -288,17 +288,43 @@ a:hover {
 :root.theme-dark :focus-visible {
 	outline: 2px solid #4899F7;
 	outline-offset: 2px;
-  }
+}
 :root.theme-dark body {
-	background:linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+	background:
+		radial-gradient(circle at top left, #3d2b4d 0%, transparent 50%),
+		radial-gradient(circle at top right, #1e3a3a 0%, transparent 50%),
+		radial-gradient(circle at bottom left, #2a2654 0%, transparent 50%),
+		radial-gradient(circle at bottom right, #3d3028 0%, transparent 50%),
+		#1a1a2e;
 	background-attachment:fixed;
-	color:#ffffff;
+	color:#f0f0f0;
+}
+:root.theme-dark body::before {
+	opacity:0.12;
 }
 :root.theme-dark a:not(.button) {
-	color:#4899F7;
+	color:#7AB8FF;
 }
 :root.theme-dark a:not(.button):hover {
-	color:#7AB8FF;
+	color:#a8d4ff;
+}
+:root.theme-dark .button,
+:root.theme-dark button {
+	background-color:rgba(255, 255, 255, 0.08);
+	backdrop-filter:blur(40px) saturate(180%) brightness(1.05);
+	-webkit-backdrop-filter:blur(40px) saturate(180%) brightness(1.05);
+	color:#f0f0f0;
+	border:1px solid rgba(255, 255, 255, 0.15);
+	box-shadow:0 4px 12px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+:root.theme-dark .button:hover,
+:root.theme-dark button:hover {
+	background-color:rgba(255, 255, 255, 0.14);
+	border:1px solid rgba(255, 255, 255, 0.25);
+	color:#ffffff;
+}
+:root.theme-dark footer {
+	color:rgba(255, 255, 255, 0.6);
 }
 
 /* Auto theme */
@@ -307,20 +333,46 @@ a:hover {
 }
 @media (prefers-color-scheme:dark) {
 	:root.theme-auto body {
-	background:linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-	background-attachment:fixed;
-	color:#ffffff;
-}
-:root.theme-auto :focus-visible {
-    outline: 2px solid #4899F7;
-    outline-offset: 2px;
-  }
-:root.theme-auto a:not(.button) {
-	color:#4899F7;
-}
-:root.theme-auto a:not(.button):hover {
-	color:#7AB8FF;
-}
+		background:
+			radial-gradient(circle at top left, #3d2b4d 0%, transparent 50%),
+			radial-gradient(circle at top right, #1e3a3a 0%, transparent 50%),
+			radial-gradient(circle at bottom left, #2a2654 0%, transparent 50%),
+			radial-gradient(circle at bottom right, #3d3028 0%, transparent 50%),
+			#1a1a2e;
+		background-attachment:fixed;
+		color:#f0f0f0;
+	}
+	:root.theme-auto body::before {
+		opacity:0.12;
+	}
+	:root.theme-auto :focus-visible {
+		outline: 2px solid #4899F7;
+		outline-offset: 2px;
+	}
+	:root.theme-auto a:not(.button) {
+		color:#7AB8FF;
+	}
+	:root.theme-auto a:not(.button):hover {
+		color:#a8d4ff;
+	}
+	:root.theme-auto .button,
+	:root.theme-auto button {
+		background-color:rgba(255, 255, 255, 0.08);
+		backdrop-filter:blur(40px) saturate(180%) brightness(1.05);
+		-webkit-backdrop-filter:blur(40px) saturate(180%) brightness(1.05);
+		color:#f0f0f0;
+		border:1px solid rgba(255, 255, 255, 0.15);
+		box-shadow:0 4px 12px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+	}
+	:root.theme-auto .button:hover,
+	:root.theme-auto button:hover {
+		background-color:rgba(255, 255, 255, 0.14);
+		border:1px solid rgba(255, 255, 255, 0.25);
+		color:#ffffff;
+	}
+	:root.theme-auto footer {
+		color:rgba(255, 255, 255, 0.6);
+	}
 }
 
 /* Button Text Color Override
@@ -337,6 +389,10 @@ a:hover {
 	}
 	body {
 	font-size:1rem;                    		/* 16px */
+	}
+	.button,button {
+	width:100%;                             /* Full width on mobile */
+	max-width:24rem;                        /* But cap at original size */
 	}
 }
 
